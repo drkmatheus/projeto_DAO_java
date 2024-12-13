@@ -9,7 +9,8 @@ public class Program {
 
         SellerDao sellerDao = DaoFactory.createSellerDao(); //chamando o daofactory eu nao exponho o codigo fonte
 
-        Seller seller = sellerDao.findById(3);
+        System.out.println("===== Teste #1: seller findById =====");
+        Seller seller = sellerDao.findById(7);
 
         System.out.println(seller);
     }
