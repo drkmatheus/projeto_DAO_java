@@ -7,9 +7,12 @@ import model.entities.Seller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
 
         SellerDao sellerDao = DaoFactory.createSellerDao(); //chamando o daofactory eu nao exponho o codigo fonte
 
@@ -40,5 +43,13 @@ public class Program {
         seller.setName("Mario");
         sellerDao.update(seller);
         System.out.println("Updated.");
+
+        System.out.println("\n===== Teste #6: seller delete =====");
+        System.out.print("Insert ID to delete: ");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("Deleted.");
+
+        sc.close();
     }
 }
